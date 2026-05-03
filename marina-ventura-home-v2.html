@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psicóloga Online | Marina Ventura – Terapia Individual, Pareja y Sexología</title>
+<meta name="description" content="Marina Ventura, psicóloga sanitaria online. Terapia individual, de pareja y sexología online. Sesiones desde 60€. Reserva tu consulta informativa.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black:       #1A1A1A;
+    --charcoal:    #2D2D2D;
+    --gray-dark:   #555555;
+    --gray-mid:    #888888;
+    --gray-light:  #D8D8D8;
+    --off-white:   #F7F5F2;
+    --white:       #FFFFFF;
+    --gold:        #C8924A;
+    --gold-light:  #E8C898;
+    --gold-pale:   #F5ECD8;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 64px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--black); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 40px; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--gray-dark);
+    font-size: 0.85rem; letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    padding: 11px 28px !important;
+    border-radius: 2px !important;
+    font-size: 0.82rem !important; font-weight: 500 !important;
+    letter-spacing: 0.06em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 55% 45%;
+    padding-top: 80px;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 64px 80px 64px;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 28px;
+    opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 4.5vw, 4.8rem);
+    font-weight: 300; line-height: 1.1; color: var(--black);
+    margin-bottom: 32px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-desc {
+    font-size: 1rem; color: var(--gray-dark); line-height: 1.75;
+    max-width: 500px; margin-bottom: 48px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+  }
+  .hero-actions {
+    display: flex; gap: 20px; align-items: center;
+    opacity: 0; animation: fadeUp 0.7s ease 0.55s forwards;
+  }
+  .btn-primary {
+    background: var(--black); color: var(--white);
+    padding: 16px 38px; border-radius: 2px;
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: background 0.25s ease;
+  }
+  .btn-primary:hover { background: var(--gold); }
+  .btn-ghost {
+    color: var(--black); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--black); padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+
+  .hero-divider {
+    width: 40px; height: 1px; background: var(--gray-light);
+    margin: 52px 0 32px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+  }
+  .hero-stats {
+    display: flex; gap: 48px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 600; color: var(--black); line-height: 1;
+  }
+  .stat-lbl { font-size: 0.75rem; color: var(--gray-mid); margin-top: 4px; letter-spacing: 0.02em; }
+
+  .hero-right {
+    background: var(--off-white);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold);
+  }
+  .hero-photo-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #E8E0D0 0%, #C8B898 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+  }
+  .hero-photo-placeholder span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: rgba(255,255,255,0.85); text-align: center; padding: 0 32px;
+  }
+  .hero-photo-placeholder small { font-size: 0.75rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .hero-badge {
+    position: absolute; bottom: 40px; left: -20px;
+    background: var(--white); padding: 18px 24px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    min-width: 220px;
+    opacity: 0; animation: slideIn 0.7s ease 1s forwards;
+  }
+  .hero-badge-label { font-size: 0.7rem; color: var(--gray-mid); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .hero-badge-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--black); }
+  .hero-badge-status { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 0.75rem; color: var(--gray-dark); }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4CAF50; }
+
+  /* SERVICIOS */
+  .servicios { padding: 120px 64px; }
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 20px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300;
+    color: var(--black); line-height: 1.2; margin-bottom: 64px;
+    max-width: 520px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .servicios-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gray-light); }
+  .servicio-card {
+    background: var(--white); padding: 48px 40px;
+    transition: background 0.3s;
+    position: relative;
+  }
+  .servicio-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .servicio-card:hover { background: var(--off-white); }
+  .servicio-card:hover::before { transform: scaleX(1); }
+  .servicio-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300; color: var(--gray-light);
+    line-height: 1; margin-bottom: 24px;
+  }
+  .servicio-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--black);
+    margin-bottom: 16px;
+  }
+  .servicio-card p { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.75; margin-bottom: 36px; }
+  .servicio-footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 28px; border-top: 1px solid var(--gray-light);
+  }
+  .servicio-price { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--black); }
+  .servicio-duracion { font-size: 0.75rem; color: var(--gray-mid); }
+  .servicio-link {
+    font-size: 0.78rem; letter-spacing: 0.06em; color: var(--gold);
+    text-decoration: none; border-bottom: 1px solid var(--gold-light);
+    padding-bottom: 1px; transition: border-color 0.2s;
+  }
+  .servicio-link:hover { border-color: var(--gold); }
+
+  /* PARA QUIEN */
+  .para-quien {
+    background: var(--black); color: var(--white);
+    padding: 120px 64px;
+  }
+  .para-quien .section-label { color: var(--gold-light); }
+  .para-quien .section-title { color: var(--white); margin-bottom: 56px; }
+  .para-quien .section-title em { color: var(--gold-light); }
+  .motivos { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .motivo {
+    padding: 28px 32px; border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex; gap: 20px; align-items: flex-start;
+    transition: background 0.2s;
+  }
+  .motivo:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .motivo:hover { background: rgba(200,146,74,0.08); }
+  .motivo-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold); opacity: 0.6;
+    flex-shrink: 0; min-width: 28px; padding-top: 2px;
+  }
+  .motivo p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.65; }
+
+  /* PROCESO */
+  .proceso { padding: 120px 64px; background: var(--off-white); }
+  .pasos { display: grid; grid-template-columns: repeat(4,1fr); gap: 48px; margin-top: 64px; }
+  .paso { position: relative; }
+  .paso::after {
+    content: '→'; position: absolute; top: 16px; right: -28px;
+    color: var(--gray-light); font-size: 1.2rem;
+  }
+  .paso:last-child::after { display: none; }
+  .paso-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300; color: var(--gold-light);
+    line-height: 1; margin-bottom: 20px;
+  }
+  .paso h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600; color: var(--black); margin-bottom: 12px;
+  }
+  .paso p { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.65; }
+
+  /* MARINA */
+  .marina {
+    padding: 120px 64px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+  }
+  .marina-img {
+    aspect-ratio: 3/4; border-radius: 2px; overflow: hidden;
+    background: linear-gradient(160deg, #E8E0D0, #C8B898);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+    color: rgba(255,255,255,0.8); text-align: center; padding: 32px;
+    position: relative;
+  }
+  .marina-img::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold);
+  }
+  .marina-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 36px; }
+  .tag {
+    border: 1px solid var(--gray-light); padding: 7px 16px;
+    font-size: 0.75rem; letter-spacing: 0.06em; color: var(--gray-dark);
+    border-radius: 1px;
+  }
+
+  /* RESEÑAS */
+  .resenas { padding: 120px 64px; background: var(--off-white); }
+  .resenas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
+  .resena-card { background: var(--white); padding: 36px; }
+  .resena-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+  .resena-text { font-size: 0.9rem; color: var(--gray-dark); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+  .resena-autor { font-size: 0.8rem; font-weight: 500; color: var(--black); }
+
+  /* FAQ */
+  .faq { padding: 120px 64px; max-width: 840px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--gray-light); }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 0; cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 400; color: var(--black);
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-icon {
+    width: 24px; height: 24px; flex-shrink: 0; margin-left: 20px;
+    color: var(--gold); font-size: 1.1rem;
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 0.9rem; color: var(--gray-dark); line-height: 1.75;
+    max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 28px; }
+
+  /* CTA FINAL */
+  .cta-final {
+    padding: 120px 64px;
+    background: var(--gold-pale);
+    text-align: center;
+  }
+  .cta-final .section-label { margin-bottom: 20px; }
+  .cta-final h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 300;
+    color: var(--black); line-height: 1.2; margin-bottom: 24px;
+  }
+  .cta-final h2 em { font-style: italic; color: var(--gold); }
+  .cta-final p { font-size: 0.95rem; color: var(--gray-dark); margin-bottom: 48px; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; }
+
+  /* FOOTER */
+  footer {
+    background: var(--black); color: rgba(255,255,255,0.5);
+    padding: 48px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer .f-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: var(--white); font-weight: 600; letter-spacing: 0.04em;
+  }
+  footer .f-links { display: flex; gap: 28px; }
+  footer .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
+  footer .f-links a:hover { color: var(--gold); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 100px 24px 60px; }
+    .hero-right { height: 380px; }
+    .hero-badge { left: 12px; bottom: 20px; }
+    .servicios, .para-quien, .proceso, .marina, .resenas, .faq, .cta-final { padding: 80px 24px; }
+    .servicios-grid { grid-template-columns: 1fr; }
+    .motivos { grid-template-columns: 1fr; }
+    .motivo:nth-child(odd) { border-right: none; }
+    .pasos { grid-template-columns: 1fr 1fr; }
+    .paso::after { display: none; }
+    .marina { grid-template-columns: 1fr; gap: 48px; }
+    .resenas-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
+    .cta-btns { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Marina Ventura · Psicóloga</a>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Cómo funciona</a>
+    <a href="#marina">Sobre mí</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto" class="nav-cta">Reservar sesión</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Psicóloga sanitaria · Online</p>
+    <h1>Psicóloga online para <em>reconectar</em> contigo y tus relaciones</h1>
+    <p class="hero-desc">Especializada en terapia individual, de pareja y sexología online. Un espacio seguro donde trabajar tus emociones, relaciones y bienestar sexual — desde donde estés.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Reservar sesión</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div><div class="stat-num">+200</div><div class="stat-lbl">Pacientes acompañados</div></div>
+      <div><div class="stat-num">5★</div><div class="stat-lbl">Valoración media</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-lbl">Sesiones online</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-placeholder">
+      <span>Foto profesional de Marina Ventura</span>
+      <small>Imagen aquí</small>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-label">Colegiada y verificada</div>
+      <div class="hero-badge-name">Marina Ventura</div>
+      <div class="hero-badge-status"><span class="status-dot"></span> Disponible online</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="section-label reveal">Servicios</div>
+  <h2 class="section-title reveal">Todo lo que necesitas,<br><em>online y a tu ritmo</em></h2>
+  <div class="servicios-grid">
+    <div class="servicio-card reveal">
+      <div class="servicio-num">01</div>
+      <h3>Terapia individual online</h3>
+      <p>Trabajamos tus emociones, pensamientos y bloqueos mentales. Gestionamos la ansiedad, mejoramos la autoestima y fortalecemos la relación contigo mismo.</p>
+      <div class="servicio-footer">
+        <div><div class="servicio-price">60€</div><div class="servicio-duracion">50 minutos</div></div>
+        <a href="#contacto" class="servicio-link">Reservar →</a>
+      </div>
+    </div>
+    <div class="servicio-card reveal">
+      <div class="servicio-num">02</div>
+      <h3>Terapia de pareja online</h3>
+      <p>Mejoramos la comunicación y resolvemos conflictos en un espacio neutral y seguro. Abordamos infidelidades, crisis de pareja, celos y dependencia emocional.</p>
+      <div class="servicio-footer">
+        <div><div class="servicio-price">70€</div><div class="servicio-duracion">60 minutos</div></div>
+        <a href="#contacto" class="servicio-link">Reservar →</a>
+      </div>
+    </div>
+    <div class="servicio-card reveal">
+      <div class="servicio-num">03</div>
+      <h3>Sexología online</h3>
+      <p>Abordamos bajo deseo sexual, disfunción eréctil, anorgasmia o dolor en las relaciones. Recupera tu vida íntima con confianza y sin tabúes.</p>
+      <div class="servicio-footer">
+        <div><div class="servicio-price">60€</div><div class="servicio-duracion">50 minutos</div></div>
+        <a href="#contacto" class="servicio-link">Reservar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIEN -->
+<section class="para-quien">
+  <div class="section-label reveal">Para quién es</div>
+  <h2 class="section-title reveal">Puede que te <em>reconozcas</em><br>en alguna de estas situaciones</h2>
+  <div class="motivos">
+    <div class="motivo reveal"><div class="motivo-num">01</div><p>Quieres establecer límites saludables y salir de dinámicas relacionales que te hacen daño.</p></div>
+    <div class="motivo reveal"><div class="motivo-num">02</div><p>Sientes ansiedad, pensamientos intrusivos o bloqueos que te paralizan en el día a día.</p></div>
+    <div class="motivo reveal"><div class="motivo-num">03</div><p>Tu relación de pareja está atrapada en conflictos, resentimientos o falta de comunicación.</p></div>
+    <div class="motivo reveal"><div class="motivo-num">04</div><p>Quieres trabajar tu autoestima y mejorar la relación contigo mismo.</p></div>
+    <div class="motivo reveal"><div class="motivo-num">05</div><p>Estás pasando por una ruptura dolorosa o trabajando la dependencia emocional.</p></div>
+    <div class="motivo reveal"><div class="motivo-num">06</div><p>Tienes dificultades en tu vida sexual y quieres recuperar tu intimidad y satisfacción.</p></div>
+    <div class="motivo reveal"><div class="motivo-num">07</div><p>Los celos o las inseguridades están afectando tu relación de pareja.</p></div>
+    <div class="motivo reveal"><div class="motivo-num">08</div><p>Quieres mejorar tus hábitos y enfocarte en lo que de verdad importa.</p></div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="section-label reveal">Cómo funciona</div>
+  <h2 class="section-title reveal">Empezar es <em>más sencillo</em><br>de lo que crees</h2>
+  <div class="pasos">
+    <div class="paso reveal">
+      <div class="paso-n">1</div>
+      <h4>Contacto inicial</h4>
+      <p>Escríbeme por WhatsApp o rellena el formulario. Te respondo en minutos.</p>
+    </div>
+    <div class="paso reveal">
+      <div class="paso-n">2</div>
+      <h4>Llamada informativa</h4>
+      <p>Hablamos sin compromiso. Te explico cómo trabajo y resuelvo tus dudas.</p>
+    </div>
+    <div class="paso reveal">
+      <div class="paso-n">3</div>
+      <h4>Documentación</h4>
+      <p>Te envío el consentimiento informado. Rápido y sencillo de firmar.</p>
+    </div>
+    <div class="paso reveal">
+      <div class="paso-n">4</div>
+      <h4>Inicio de terapia</h4>
+      <p>Comenzamos con tu primera sesión. Desde casa, sin desplazamientos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARINA -->
+<section class="marina" id="marina">
+  <div class="marina-img reveal">
+    <span>Foto de Marina<br><small style="opacity:0.6;font-size:0.8rem">Imagen profesional aquí</small></span>
+  </div>
+  <div>
+    <div class="section-label reveal">Sobre mí</div>
+    <h2 class="section-title reveal">Soy Marina Ventura,<br><em>psicóloga sanitaria</em> colegiada</h2>
+    <p class="reveal" style="font-size:0.95rem;color:var(--gray-dark);line-height:1.8;margin-bottom:20px;">Llevo años acompañando a personas a reconectar consigo mismas y construir relaciones más sanas. Mi propia historia —incluyendo la separación de mis padres y mis experiencias con relaciones codependientes— me llevó a este camino.</p>
+    <p class="reveal" style="font-size:0.95rem;color:var(--gray-dark);line-height:1.8;margin-bottom:32px;">Eso me permite entenderte desde dentro, no solo desde los libros. Trabajo desde un enfoque cercano, empático y sin juicios, adaptado a tu ritmo.</p>
+    <div class="marina-tags reveal">
+      <span class="tag">Psicóloga sanitaria</span>
+      <span class="tag">Terapeuta de pareja</span>
+      <span class="tag">Sexóloga certificada</span>
+      <span class="tag">100% online</span>
+    </div>
+    <div style="margin-top:40px;" class="reveal">
+      <a href="#contacto" class="btn-primary">Reservar sesión</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="resenas">
+  <div class="section-label reveal">Testimonios</div>
+  <h2 class="section-title reveal">Lo que dicen <em>mis pacientes</em></h2>
+  <div class="resenas-grid">
+    <div class="resena-card reveal">
+      <div class="resena-stars">★★★★★</div>
+      <p class="resena-text">"Marina me ayudó a salir de una relación tóxica en la que llevaba años atrapada. Su forma de trabajar es muy cercana y nunca me sentí juzgada."</p>
+      <div class="resena-autor">— Laura M.</div>
+    </div>
+    <div class="resena-card reveal">
+      <div class="resena-stars">★★★★★</div>
+      <p class="resena-text">"Empecé la terapia de pareja con mucho miedo y ahora no puedo imaginar cómo habríamos resuelto nuestros problemas sin su ayuda."</p>
+      <div class="resena-autor">— Carlos y Ana</div>
+    </div>
+    <div class="resena-card reveal">
+      <div class="resena-stars">★★★★★</div>
+      <p class="resena-text">"Por fin encontré un espacio donde hablar de sexualidad sin vergüenza. Marina es una profesional increíble, empática y muy preparada."</p>
+      <div class="resena-autor">— Patricia G.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-label reveal">FAQ</div>
+  <h2 class="section-title reveal">Preguntas <em>frecuentes</em></h2>
+  <div style="margin-top:48px;">
+    <div class="faq-item">
+      <div class="faq-q">¿Cuánto dura un proceso terapéutico? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Depende de cada persona y sus objetivos. Algunos procesos duran 3-4 meses, otros pueden extenderse más. Lo valoramos juntas desde el principio.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cómo se hacen las sesiones online? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Por videollamada a través de una plataforma segura y confidencial. Solo necesitas conexión a internet y un espacio tranquilo. Sin instalaciones.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Es confidencial todo lo que hablamos? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sí, absolutamente. La confidencialidad es un pilar fundamental de la terapia. Todo queda entre nosotras, salvo en situaciones excepcionales previstas por la ley.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cómo se realiza el pago? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Por transferencia bancaria antes de cada sesión. Sin pagos por adelantado ni permanencia. Puedes cancelar o pausar cuando lo necesites.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Puedo empezar aunque tenga dudas o miedo? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Por supuesto. Es totalmente normal. Para eso existe la llamada informativa: para que puedas conocerme sin compromiso y decidir con calma.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contacto">
+  <div class="section-label">Da el primer paso</div>
+  <h2 class="reveal">¿Lista para <em>empezar</em>?</h2>
+  <p class="reveal">La consulta informativa es sin compromiso. Hablamos 15 minutos y decides con calma.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/34000000000" class="btn-primary">💬 Escribir por WhatsApp</a>
+    <a href="https://marinaventurapsicologia.com/contacto/" class="btn-ghost">O usar el formulario →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">Marina Ventura · Psicóloga Online</div>
+  <div class="f-links">
+    <a href="#">Aviso legal</a>
+    <a href="#">Privacidad</a>
+    <a href="#">Cookies</a>
+    <a href="#">Accesibilidad</a>
+  </div>
+  <div style="font-size:0.78rem">© Marina Ventura 2026</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
